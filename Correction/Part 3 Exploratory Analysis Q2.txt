@@ -1,0 +1,82 @@
+Basing on the module  guide, it is being suggested that the correct number of documents is 34. But that is incorrect as inspecting the data it should only come up with 33.
+One document has been counted in by mistake. 
+
+However, on review of the dataset using this filter on the unchanged dataset:
+{"$and": [{"LocalAuthorityName": {"$regex": "London ", "$options": "i"}},{"RatingValue": {"$gte": "4"}}]}
+
+It has displayed this
+BusinessName	RatingValue
+Charlie's	4
+Mv City Cruises Erasmus	5
+Benfleet Motor Yacht Club	4
+Coombs Catering t/a The Lock and Key	5
+Tilbury Seafarers Centre	5
+Mv Valulla	5
+Froottree	AwaitingInspection
+Tereza Joanne	5
+Brick Lane Brews	4
+WH Smith	5
+The Nuance Group (UK) Limited	5
+City Bar & Grill	5
+Jet Centre	5
+CaffÃ¨ Nero	5
+Mv Sunborn Yacht Hotel	5
+Good Hotel London	5
+La Nonna lina	4
+Wake Up Docklands Limited	5
+MV Venus Clipper	5
+MV Mercury clipper	5
+MV Typhoon clipper	5
+MV Tornado clipper	5
+MV Jupiter clipper	5
+MV Moon clipper	5
+MV Meteor clipper	5
+MV Hurricane clipper	5
+MV Cyclone clipper	5
+MV Monsoon clipper	5
+MV Neptune clipper	5
+MV Aurora clipper	5
+MV Sun clipper	5
+MV Galaxy clipper	5
+Canary Wharf 1V	5
+Mv Storm Clipper	5
+
+
+The Froottree has an AwaitingInspection value for some reason it keeps being brought up during the search. 
+Transforming the data set according to the specification using the following filter:
+{"$and": [{"LocalAuthorityName": {"$regex": "London ", "$options": "i"}},{"RatingValue": {"$gte": 4}}]}
+
+BusinessName	RatingValue
+Charlie's	4
+Mv City Cruises Erasmus	5
+Benfleet Motor Yacht Club	4
+Coombs Catering t/a The Lock and Key	5
+Tilbury Seafarers Centre	5
+Mv Valulla	5
+Tereza Joanne	5
+Brick Lane Brews	4
+WH Smith	5
+The Nuance Group (UK) Limited	5
+City Bar & Grill	5
+Jet Centre	5
+CaffÃ¨ Nero	5
+Mv Sunborn Yacht Hotel	5
+Good Hotel London	5
+La Nonna lina	4
+Wake Up Docklands Limited	5
+MV Venus Clipper	5
+MV Mercury clipper	5
+MV Typhoon clipper	5
+MV Tornado clipper	5
+MV Jupiter clipper	5
+MV Moon clipper	5
+MV Meteor clipper	5
+MV Hurricane clipper	5
+MV Cyclone clipper	5
+MV Monsoon clipper	5
+MV Neptune clipper	5
+MV Aurora clipper	5
+MV Sun clipper	5
+MV Galaxy clipper	5
+Canary Wharf 1V	5
+Mv Storm Clipper	5
