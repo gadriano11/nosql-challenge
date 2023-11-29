@@ -103,7 +103,7 @@ Unless otherwise stated, for each question:
 
 The first 5 rows of your resulting DataFrame should look something like this:
 
-|   |  	 _id    |	count |
+|   |  	 _id    |	 count |
 |:-:|:---------:|:-----:|
 |0	|Thanet	    | 1130  |
 |1	|Greenwich	| 882   |
